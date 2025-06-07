@@ -35,6 +35,10 @@ public class Employee extends AbstractEntity{
     )
     private Set<EducationalUnit> eduUnits = new HashSet<>();
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private void addEducationalUnit(EducationalUnit educationalUnit) {
         if (eduUnits == null) eduUnits = new HashSet<>();
         eduUnits.add(educationalUnit);

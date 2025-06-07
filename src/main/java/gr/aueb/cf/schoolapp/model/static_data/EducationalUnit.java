@@ -20,6 +20,11 @@ public class EducationalUnit {
     private Long id;
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "region_id")
+    private Region region;
+
+
     @ManyToMany(mappedBy = "eduUnits")
     private Set<Employee> employees = new HashSet<>();
 
